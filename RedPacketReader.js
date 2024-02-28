@@ -56,9 +56,6 @@ console.verbose("Copy red packet info success, result is: %s", result);
 function handleInfo(info) {
     //  processing emoji on name
 
-    //  processing "." and chinese on value
-
-    //  format date
 
     return info;
 }
@@ -67,10 +64,13 @@ function handleInfo(info) {
  * build info to copy, should be format info type.
  */
 function buildCopyInfo(source) {
-    var result = "红包详情数据\n";
+    var placeholder = "[--------------]\n";
+    var result = "";
+    result += placeholder;
     for (var i = 0; i < source.length; i++) {
         result += "[" + source[i].name + "] [" + source[i].value + "] [" + source[i].time + "]\n";
     }
+    result += placeholder;
 
     return result;
 }
